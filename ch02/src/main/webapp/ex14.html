@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input{
+		background-color: #fff;
+		border: 2px solid #00FF00;
+		outline:none;
+	}
+	input#user-id			{background-color: #FF0000;}
+	input#user-id.focused	{background-color: #E1E6F6;}
+</style>
+<script type="text/javascript">
+	function changeClassName(input, className){
+		input.className=className;
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type='text' 
+			onfocus='changeClassName(this, "focused");'
+			onBlur='changeClassName(this,"");'
+			id='user-id'/>
+		<br/>
+		<input type='password' name="password"/>
+	</form>
+</body>
+</html>
