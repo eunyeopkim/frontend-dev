@@ -40,11 +40,40 @@ p.cap {
 
 p.up {
 	text-transform: uppercase;
-	letter-spacing:0px;
+	letter-spacing:-1px;
 }
 
 p.word_space {
 	word-spacing:10px;
+}
+/* ellipsis - 한줄 라인 처리 */
+p.text4{
+	width: 130px;
+	line-height: 1.2em;
+	height: 3.6em;
+	border: 1px solid #333;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: nowrap;
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 3;			/* 라인수 */
+	-webkit-box-orient: vertical;
+	
+}
+
+/* ellipsis - 한줄 라인 처리(Block Level) */
+p.text3{
+
+	width:70px;					/* 텍스트를 그릴 element의 너비 */
+	height: 20px;
+	border: 1px solid #333;
+	padding: 0 5px;
+	overflow: hidden;			/* 글자 길이가 너비를 넘어 갈 경우 보이지 않게 처리 */
+	text-overflow: ellipsis;	/* 글자 길이가 너비를 넘어 갈 경우  ... 처리 */
+	white-space: nowrap;		/* 공백 문자인 경우 줄바꿈 금지, 한줄처리 */
 }
 
 
@@ -63,6 +92,14 @@ p.word_space {
 <p class="up">영문자는 abc 로 시작됩니다.</p>
 <p>면적을 나타내는 단위는 cm<span class="vertical">2</span>, m<span class="vertical">2</span>, km<span class="vertical">2</span> 등이 있습니다.</p>
 <p class="word_space"> 단어와 단어 사이의 간격을 조절합니다.</p>
+
+<p class='text3' title='영문자는 abc로 시작됩니다.'>영문자는 abc로 시작됩니다.</p>
+<p class='text4'>
+	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+	bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+	ccccccccccccccccccccccccccccccc<br>
+	ddddddddddddddddddddddddddddddd<br>
+</p>
 
 </body>
 </html>
