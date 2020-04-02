@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	width: 700px;
+	height: 100px;
+	margin: 50px auto 0;
+}
+
+.header .logo, .header .search-box {
+	float: left;
+}
+
+.header .logo {
+	width: 200px;
+	height: 50px;
+	font-size: 0;
+	text-indent: 110%; overflow : hidden;
+	background: url('images/sp_search.svg') no-repeat -5px -5px;
+	overflow: hidden;
+}
+
+.header .search-box {
+	border: 2px solid #03CF5D;
+	width: 400px;
+	height: 50px;
+	margin-left: 20px;
+}
+
+.search-box a, .search-box input, .search-box button {
+	display: block;
+	float: left;
+}
+
+.search-box input {
+	border: none;
+	width: 300px;
+	height: 45px;
+}
+
+.search-box input:focus {
+	outline: none;
+}
+
+.search-box a#keyboard {
+	text-align: center;
+	background: url('images/sp_search.svg') no-repeat -29px -50px;
+	font-size: 0;
+	text-indent: 130%;
+	overflow: hidden;
+	margin: 10px 0 0 0;
+	width: 27px; 
+	height: 25px;
+}
+.search-box a#dropdown {
+
+	text-align: center;
+	background: url('images/sp_search.svg') no-repeat -83px -50px;
+	font-size: 0;
+	text-indent: 130%;
+	margin: 12px 0 0 0;
+	overflow: hidden;
+	width: 20px;
+	height: 20px;
+}
+
+.search-box button {
+	text-indent: 110%;
+	font-size: 0;
+	overflow: hidden;
+	background: url('images/sp_search.svg') no-repeat 21px -50px;
+	background-color: #03CF5D;
+	width: 53px;
+	height: 51px;
+	outline:none;
+	border:none;
+	cursor: pointer;
+}
+.search-box button span{
+	
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1 class='logo'>네이벙</h1>
+		<div class='search-box'>
+			<input type="text" style="font-size:18px; font-family:'고딕'"/> 
+			<a href="#" id="keyboard">키보드</a> 
+			<a href="#" id="dropdown">드롭다운</a>
+			<button><span>돋보기</span></button>
+		</div>
+	</div>
+</body>
+</html>
