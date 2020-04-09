@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>sample1</title>
+<script type="text/javascript" src="./jquery/jquery-3.4.1.js"></script>
+<script>
+// class 선택자만 지원해주는 dQuery 라이브러리
+var dQuery = function(className){
+	var elements = document.querySelectorAll(className);
+	return new _dQuery(elements);
+}
+
+var _dQuery = function(elements){
+	this.length = elements.length;
+	for(var i=0; i<elements.length; i++){
+		this["" + i] = elements[i];
+	}
+}
+_dQuery.prototype.css = function(name, value){
+	for(var i = 0; i< this.length; i++){
+		this[i].style[name] = value;
+	}
+}
+
+_dQuery.prototype.get = function(index){
+	return this[index];
+}
+
+_dQuery.prototype.click = function(handler){
+	for(var i = 0; i< this.length; i++){
+		this[i].addEventListener("click", handler);
+	}
+}
+
+var $d = dQuery;
+
+// test code
+window.addEventListener('load', function(){
+	var $obj = $d(".par");
+	$obj.css("color", "red");
+	$obj.click(function(){
+		console.log("clicked:" + this);
+		$(this).css("text-decoration", "underline");
+	});
+	
+});
+
+
+</script>
+</head>
+<body>
+	<h1>dQuery 만들기</h1>
+	<p class="par">문장1</p>
+	<p>문장2</p>
+	<p class="par">문장3</p>
+	<p>문장4</p>
+</body>
+</html>
