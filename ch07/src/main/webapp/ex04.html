@@ -18,8 +18,18 @@ $(function(){
 	$obj.click(function(){
 		// 이벤트 핸들러에서 this는 jQuery 객체가 아니다 .HTML Element이다.
 		console.log("clicked-" + this);
-		$(this).css("text-decoration", "underline");
-	});
+		
+		var $obj = $(this);
+		
+		// $(this).css("text-decoration", "underline");
+		// $(this).text('클릭!');
+		
+		// jQuery Object의 모든 메소드는 this에 해당되는 jQuery Object를 다시 반환한다.
+		// method chain이 가능하다.
+		$(this)
+			.css("text-decoration", "underline")
+			.text('클릭!');
+		});
 });
 
 </script>
