@@ -8,6 +8,7 @@
 // class 선택자만 지원해주는 dQuery 라이브러리
 var dQuery = function(className){
 	var elements = document.querySelectorAll(className);
+	console.log(typeof(elements));
 	return new _dQuery(elements);
 }
 
